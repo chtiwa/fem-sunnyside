@@ -1,6 +1,17 @@
+import { motion } from "framer-motion"
+
 const Footer = () => {
   return (
-    <div className="flex flex-col">
+    <motion.div
+      className="flex flex-col"
+      viewport={{ once: true }}
+      whileInView={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      transition={{
+        duration: 0.5,
+        delay: 0.5
+      }}
+    >
       <div className="grid grid-cols-2 md:grid-cols-4 w-[100%] max-h-[100vh]">
         <div className="md:bg-[url('/images/desktop/image-gallery-milkbottles.jpg')] bg-[url('/images/mobile/image-gallery-milkbottles.jpg')] object-cover bg-no-repeat bg-center h-[30vh] md:h-[50vh] w-[100%]" />
         <div className="md:bg-[url('/images/desktop/image-gallery-orange.jpg')] bg-[url('/images/mobile/image-gallery-orange.jpg')] object-cover bg-no-repeat bg-center h-[30vh] md:h-[50vh]" />
@@ -29,7 +40,7 @@ const Footer = () => {
           </li>
         </ul>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
